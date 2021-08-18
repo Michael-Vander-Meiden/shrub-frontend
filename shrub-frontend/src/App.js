@@ -1,12 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import * as ReactBootStrap from "react-bootstrap";
-import Home from "./component/Home";
-import Navbar from "./component/Navbar";
-import Cover from "./component/Cover";
-import Stake from "./component/Stake";
-import Swap from "./component/Swap";
-
+import GlobalStyle from './globalStyles';
+import { Navbar, Footer } from './component';
+import ScrollToTop from './component/ScrollToTop'
+import Home from './pages/HomePage/Home';
+import Coverage from './pages/Coverage/Coverage';
+import AccountSummary from './pages/AccountSummary/AccountSummary';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,28 +14,26 @@ import {
   Link
 } from "react-router-dom";
 
+
 function App() {
   return (
     <div className="App">
       <Router>
+        <GlobalStyle />
+        <ScrollToTop />
         <Navbar/> 
-    
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/cover" component={Cover}>
-            <Cover />
-          </Route>
-          <Route path="/swap" component={Swap}>
-            <Swap />
-          </Route>
-          <Route path="/stake" component={Stake}>
-            <Stake />
-          </Route>
-          <Route path="/" component={Home}>
-            <Home />
-          </Route>
+          <Route path='/' exact component={Home} />
         </Switch>
+        <Switch>
+          <Route path='/coverage' exact component={Coverage} />
+        </Switch>
+        <Switch>
+          <Route path='/AccountSummary' exact component={AccountSummary} />
+        </Switch>
+        <Footer />
+    
+       
       
     </Router>
     </div>
