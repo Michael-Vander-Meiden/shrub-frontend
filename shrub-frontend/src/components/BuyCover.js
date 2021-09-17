@@ -1,9 +1,11 @@
 import useStyles from "./styles";
 import {useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
 
 
 import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container} from '@material-ui/core'
 
+// TODO Change name from "BuyCover" to "PolicyList" or something
 
 const BuyCover = () => {
 
@@ -53,8 +55,9 @@ const BuyCover = () => {
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
                             
-                            <Button size="small" color="primary">Purchase</Button>
-                            
+                            <Link to={`/policies/${policy.id}`}>  
+                              <Button size="small" color="primary">Purchase</Button>
+                            </Link>
                             
                         </CardActions>
                         </Card>
