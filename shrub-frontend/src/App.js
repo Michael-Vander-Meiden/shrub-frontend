@@ -1,4 +1,4 @@
-import BuyCover from "./components/BuyCover";
+import PolicyList from "./components/PolicyList";
 import PolicyDetails from "./components/PolicyDetails";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -14,7 +14,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/policies">
-              <BuyCover />
+              <PolicyList />
             </Route>
             <Route path="/policies/:id">
               <PolicyDetails />

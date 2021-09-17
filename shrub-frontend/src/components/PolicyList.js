@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 
 import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container} from '@material-ui/core'
 
-// TODO Change name from "BuyCover" to "PolicyList" or something
-
-const BuyCover = () => {
+const PolicyList = () => {
 
     const [policies, setPolicies] = useState(null);
 
@@ -71,4 +69,4 @@ const BuyCover = () => {
     );
 }
 
-export default BuyCover
+export default PolicyList
