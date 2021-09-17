@@ -1,4 +1,5 @@
-import BuyCover from "./components/BuyCover";
+import PolicyList from "./components/PolicyList";
+import PolicyDetails from "./components/PolicyDetails";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
@@ -8,29 +9,21 @@ function App() {
   
   
   return (
-    // <Router>
-      
-        
-    //     <Navbar />
-    //   <div className="container-fluid">
-    //     <Switch>
-    //       <Route path="/about" component={About}/>
-    //       <Route path="/buycover" component={BuyCover}/>
-    //       <Route path="/" exact component={Home}/>
-    //       <Route path="/steak" component={Steak}/>
-    //     </Switch>
+    <Router>
+      <div className="App">
+        <div className="content">
+          <Switch>
+            <Route exact path="/policies">
+              <PolicyList />
+            </Route>
+            <Route path="/policies/:id">
+              <PolicyDetails />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
 
-    //     {/* <div className="container-fluid">
-    //       <h1>Hello</h1>  
-    //     </div> */}
-
-    //   </div>
-    // </Router>
-
-    <>
-    
-      <BuyCover />
-    </>
   );
 }
 

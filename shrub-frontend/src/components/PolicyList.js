@@ -1,11 +1,11 @@
 import useStyles from "./styles";
 import {useState, useEffect} from "react";
+import { Link } from 'react-router-dom';
 
 
 import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container} from '@material-ui/core'
 
-
-const BuyCover = () => {
+const PolicyList = () => {
 
     const [policies, setPolicies] = useState(null);
 
@@ -53,8 +53,9 @@ const BuyCover = () => {
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
                             
-                            <Button size="small" color="primary">Purchase</Button>
-                            
+                            <Link to={`/policies/${policy.id}`}>  
+                              <Button size="small" color="primary">Purchase</Button>
+                            </Link>
                             
                         </CardActions>
                         </Card>
@@ -68,4 +69,4 @@ const BuyCover = () => {
     );
 }
 
-export default BuyCover
+export default PolicyList
