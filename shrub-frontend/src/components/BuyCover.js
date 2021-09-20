@@ -10,7 +10,7 @@ const BuyCover = () => {
     const [policies, setPolicies] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:8000/policies')
+        fetch('http://localhost:3000/policies')
             .then(res => {
                 return res.json();
             })
