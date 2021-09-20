@@ -7,6 +7,8 @@ import ScrollToTop from './component/ScrollToTop'
 import Home from './pages/HomePage/Home';
 import Coverage from './pages/Coverage/Coverage';
 import AccountSummary from './pages/AccountSummary/AccountSummary';
+import OAccountSummary from './pages/OAccountSummary/OAccountSummary';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,6 +32,9 @@ function App() {
         </Switch>
         <Switch>
           <Route path='/AccountSummary' exact component={AccountSummary} />
+        </Switch>
+        <Switch>
+          <Route path='/OAccountSummary' exact component={OAccountSummary} />
         </Switch>
         <Footer />
     

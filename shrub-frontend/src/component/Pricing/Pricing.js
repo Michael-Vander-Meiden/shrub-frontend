@@ -32,13 +32,13 @@ function Pricing() {
                 <PricingCardIcon>
                   <GiRock />
                 </PricingCardIcon>
-                <PricingCardPlan>Starter Pack</PricingCardPlan>
+                <PricingCardPlan>Earth Quake</PricingCardPlan>
                 <PricingCardCost>$99.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>100 New Users</PricingCardFeature>
-                  <PricingCardFeature>$10,000 Budget</PricingCardFeature>
-                  <PricingCardFeature>Retargeting analytics</PricingCardFeature>
+                  <PricingCardFeature>5 mile radius from San Francisco</PricingCardFeature>
+                  <PricingCardFeature>Richter Scale: 5</PricingCardFeature>
+                  <PricingCardFeature>Other Info</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button primary>Choose Plan</Button>
               </PricingCardInfo>
@@ -48,13 +48,13 @@ function Pricing() {
                 <PricingCardIcon>
                   <GiCrystalBars />
                 </PricingCardIcon>
-                <PricingCardPlan>Gold Rush</PricingCardPlan>
+                <PricingCardPlan>Hurricane</PricingCardPlan>
                 <PricingCardCost>$299.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>1000 New Users</PricingCardFeature>
-                  <PricingCardFeature>$50,000 Budget</PricingCardFeature>
-                  <PricingCardFeature>Lead Gen Analytics</PricingCardFeature>
+                  <PricingCardFeature>10 miles radius of Miami</PricingCardFeature>
+                  <PricingCardFeature>Windspeeds: >100knots</PricingCardFeature>
+                  <PricingCardFeature>Other Info</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button primary>Choose Plan</Button>
               </PricingCardInfo>
@@ -64,13 +64,13 @@ function Pricing() {
                 <PricingCardIcon>
                   <GiCutDiamond />
                 </PricingCardIcon>
-                <PricingCardPlan>Diamond Kings</PricingCardPlan>
+                <PricingCardPlan>Flooding</PricingCardPlan>
                 <PricingCardCost>$999.99</PricingCardCost>
                 <PricingCardLength>per month</PricingCardLength>
                 <PricingCardFeatures>
-                  <PricingCardFeature>Unlimited Users</PricingCardFeature>
-                  <PricingCardFeature>Unlimited Budget</PricingCardFeature>
-                  <PricingCardFeature>24/7 Support</PricingCardFeature>
+                  <PricingCardFeature>XYZ city</PricingCardFeature>
+                  <PricingCardFeature>Info section 1</PricingCardFeature>
+                  <PricingCardFeature>Info Section 2</PricingCardFeature>
                 </PricingCardFeatures>
                 <Button primary>Choose Plan</Button>
               </PricingCardInfo>

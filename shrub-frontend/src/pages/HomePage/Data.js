@@ -1,5 +1,5 @@
 export const homeObjOne = {
-    primary: true,
+    primary: false,
     lightBg: false,
     lightTopLine: true,
     lightText: true,
@@ -45,7 +45,7 @@ export const homeObjOne = {
       "Shrub saved me a lot of money in premiums but gave me the same coverage compared to other insurance companies. The process to get insurance was the easiest I've ever had. It took me less than 10 minutes to get coverage.",
     buttonLabel: 'Browse Coverag in your Area',
     imgStart: 'start',
-    img: require('../../images/svg-policy.svg').default,
+    img: require('../../images/svg-3.svg').default,
     alt: 'Vault',
     start: 'true'
   };

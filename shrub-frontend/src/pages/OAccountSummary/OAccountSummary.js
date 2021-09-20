@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import { InfoSection } from '../../component';
-import { homeObjOne, homeObjTwo } from './Data';
+import React, { Component }  from 'react';
 // import Web3 from 'web3'
 
 
@@ -26,17 +24,26 @@ import { homeObjOne, homeObjTwo } from './Data';
 //     loading: true
 //   }
 
-function AccountSummary() {
+{/* <p1>Account Number: {this.state.account} </p1>  */}
+
+
+function OAccountSummary() {
   return (
     <>
-    {/* <div className="container">
-      <h1> Testnet web3</h1>
-      <p> Your Account: {this.state.account}</p>
-    </div> */}
-      <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
+      <div>
+          <h1>OAccount Summary</h1>
+          <p1>Account Number: this.state.account </p1> 
+          <br/>  
+          
+          <p2>SHRB Number</p2>
+          <br/>  
+          <p2>Eth Number</p2>
+          <br/>  
+
+      </div>
+
     </>
   );
-}
+};
 
-export default AccountSummary;
+export default OAccountSummary;
