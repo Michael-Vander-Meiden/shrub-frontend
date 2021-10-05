@@ -68,7 +68,7 @@ const PolicyList = () => {
                       return val
                     }
                   }).map((policy) => (
-                    <Grid item key={policy.id} xs={12} sm={6} md={4}>
+                    <Grid item key={policy.policy_id} xs={12} sm={6} md={4}>
                         <Card className={classes.card}>
                         <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title="image title"/>
                         <CardContent className={classes.cardContent}>
