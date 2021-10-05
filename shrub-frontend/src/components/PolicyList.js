@@ -2,7 +2,6 @@ import useStyles from "./styles";
 import {useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
 
-
 import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, TextField} from '@material-ui/core'
 
 const PolicyList = () => {
@@ -11,24 +10,32 @@ const PolicyList = () => {
     const [SearchTerm, setSearchTerm] = useState('');
     const classes = useStyles();
 
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/policies')
+    //         .then(res => {
+    //             return res.json();
+    //         })
+    //         .then(data => {
+    //             setPolicies(data)
+    //         });
+    // }, []);
+
     useEffect(() => {
-        fetch('http://localhost:3000/policies')
-            .then(res => {
-                return res.json();
-            })
-            .then(data => {
-                setPolicies(data)
-            });
-    }, []);
+      fetch('https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789')
+          .then(res => {
+              return res.json();
+          })
+          .then(data => {
+              setPolicies(data)
+          });
+  }, []);
 
     
     return (
         <>
 
-
         <CssBaseline />
         <main>
-
 
           <div>
             <Container maxWidth="sm" className={classes.container}>
@@ -70,9 +77,9 @@ const PolicyList = () => {
                             {policy.location}
                             </Typography>
                             <Typography>
-                            Magnitude: {policy.magnitude} <br />
-                            Policy begins: {policy.begin} <br />
-                            Policy ends: {policy.end} <br />
+                            Magnitude: {policy.mag} <br />
+                            Policy begins: {policy.start_time} <br />
+                            Policy ends: {policy.end_time} <br />
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
