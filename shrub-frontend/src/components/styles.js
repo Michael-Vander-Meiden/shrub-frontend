@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 
     container: {
-        padding: theme.spacing(8, 0, 6),
+        padding: theme.spacing(4, 0, 0),
         
     },
 
@@ -22,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
     },
     cardContent: {
         flexGrow: 1,
+    },
+
+    searchBar: {
+        padding: '20px 0',
+        maxWidth: '25%'
     }
 }));
 
