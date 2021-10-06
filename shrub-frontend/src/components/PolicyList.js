@@ -77,14 +77,14 @@ const PolicyList = () => {
                             {policy.location}
                             </Typography>
                             <Typography>
-                            Magnitude: {policy.mag} <br />
+                            Magnitude: {policy.magnitude} <br />
                             Policy begins: {policy.start_time} <br />
                             Policy ends: {policy.end_time} <br />
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
                             
-                            <Link to={`/policies/${policy.id}`}>  
+                            <Link to={`/policies/${policy.policy_id}`}>  
                               <Button size="small" color="primary">Purchase</Button>
                             </Link>
                             

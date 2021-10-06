@@ -10,8 +10,9 @@ import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, C
 const PolicyDetails = () => {
     const history = useHistory();
 
-    const {id} = useParams();
-    const {data: policy, error, isPending } = useFetch("http://localhost:8000/policies/" + id);
+    const {policy_id} = useParams();
+    //const {data: policy, error, isPending } = useFetch("http://localhost:8000/policies/" + policy_id);
+    const {data: policy, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789&policy_id="+policy_id);
 
     const classes = useStyles();
 

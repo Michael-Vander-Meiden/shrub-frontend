@@ -32,7 +32,7 @@ function App() {
             <Route exact path="/policies">
               <PolicyList />
             </Route>
-            <Route path="/policies/:id">
+            <Route path="/policies/:policy_id">
               <PolicyDetails />
             </Route>
           </Switch>
