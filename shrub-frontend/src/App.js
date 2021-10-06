@@ -1,5 +1,6 @@
 import PolicyList from "./components/PolicyList";
 import PolicyDetails from "./components/PolicyDetails";
+import OAccountSummary from "./components/OAccountSummary";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import React, { Component, } from 'react'
@@ -7,7 +8,7 @@ import Web3 from 'web3'
 // import SimpleStorageContract from"./contracts/SimpleStorage.sol"
 
 // For button:
-import {useWallet, UseWalletProvider} from 'use-wallet'
+// import {useWallet, UseWalletProvider} from 'use-wallet'
 
 class App extends Component {
   // state = {storageValue: 0, web3: null, contract: null};
@@ -92,24 +93,36 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <div >
-            <h1>Account Summary</h1>
-            <h2>Your Account: {this.state.account} </h2>
-            <h2>Your Balance: {this.state.balance} ETH</h2>
-            {/* <main role="main" className="col-lg-12 d-flex justify-content-center">
-              { this.state.loading
-                ? <div id="loader" className="text-center"><p className="text-center">Loading...</p></div>
-                : <TodoList
-                  tasks={this.state.tasks}
-                  createTask={this.createTask}
-                  toggleCompleted={this.toggleCompleted} />
-              }
-            </main> */}
-          </div>
+
+    <Router>
+      <div className="App">
+        <div className="content">
+          <Switch>
+            <Route exact path="/policies">
+              <PolicyList />
+            </Route>
+            <Route path="/policies/:id">
+              <PolicyDetails />
+            </Route>
+            <Route path="/OAccountSummary">
+              <OAccountSummary />
+            </Route>
+            <Route path="/account-summary">
+            <div>
+              <div >
+                  <h1>Account Summary</h1>
+                  <h2>Your Account: {this.state.account} </h2>
+                  <h2>Your Balance: {this.state.balance} ETH</h2>
+                <h2>Your Policies:  NY-Quake-21, SF-Quake-21, Miami-Cane-21 </h2>
+              </div>
+            </div>
+            </Route>
+          </Switch>
         </div>
       </div>
+      
+    </Router>
+
     );
   }
 }
