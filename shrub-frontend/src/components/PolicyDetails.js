@@ -18,10 +18,12 @@ const PolicyDetails = () => {
     const [price, setPrice] = useState(0.05);
     const [amount, setAmount] = useState(0.0);
     const [cost, setCost] = useState(0.0);
-
+    const [userAddress, setAddress] = useState("");
     const handleInput = (e) => {
         setAmount(e.target.value);
         setCost(amount * price);
+        window.web3.eth.getAccounts().then( function (result) {  setAddress(result[0]) });
+
     }
 
     return (
@@ -49,21 +51,32 @@ const PolicyDetails = () => {
                                 </CardContent>
                         </Card>
                     </Grid>
-                <Grid item xs={12} sm={9} md={4}>
-                    <Card className={classes.card} variant="outlined">
-                            <CardContent className={classes.cardContent}>
-                                <Typography gutterBottom variant="h5" align="center">
-                                    Summary
-                                </Typography>
-                                <Typography>
-                                    <p> Pays {amount} in USDC if {policy.magnitude} or greater earthquake happens within 100 miles of {policy.location}</p>
-                                    <p>Price: {cost}</p>
-                                    <Button variant="contained">Buy Now</Button>
-                                </Typography>
-                            </CardContent>
-                    </Card>
-                </Grid>
-
+                    <Grid item xs={12} sm={9} md={4}>
+                        <Card className={classes.card} variant="outlined">
+                                <CardContent className={classes.cardContent}>
+                                    <Typography gutterBottom variant="h5" align="center">
+                                        Summary
+                                    </Typography>
+                                    <Typography>
+                                        <p> Pays {amount} in USDC if {policy.magnitude} or greater earthquake happens within 100 miles of {policy.location}</p>
+                                        <p>Price: {cost}</p>
+                                        <Button variant="contained">Buy Cover For {userAddress}</Button>
+                                    </Typography>
+                                </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid item xs={12} sm={9} md={4}>
+                        <Card className={classes.card} variant="outlined">
+                                <CardContent className={classes.cardContent}>
+                                    <Typography gutterBottom variant="h5" align="center">
+                                        Policy Details
+                                    </Typography>
+                                    <Typography>
+                                        <p> This policy will trigger as soon as there is an earthquake of magnitude {policy.magnitude} or greater with a locus within 100 miles of {policy.location}, defined at latitude: {policy.latitude} and longitude: {policy.longitude} </p>
+                                    </Typography>
+                                </CardContent>
+                        </Card>
+                    </Grid>
                 </Grid>
                 </Container>
 

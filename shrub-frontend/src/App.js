@@ -1,13 +1,31 @@
 import PolicyList from "./components/PolicyList";
 import PolicyDetails from "./components/PolicyDetails";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-
-
-
+import {getWeb3} from "./utils/getWeb3";
+import {getEthereum} from "./utils/getEthereum";
+import {useEffect} from "react";
+import Web3 from 'web3';
 
 function App() {
-  
-  
+
+  useEffect(() => {
+
+    async function loadWeb3() {
+      if (window.ethereum) {
+          window.web3 = new Web3(window.ethereum);
+          await window.ethereum.enable();
+      } else if (window.web3) {
+          window.web3 = new Web3(window.web3.currentProvider);
+      } else {
+          console.log("Non-Ethereum browser detected. You should consider trying MetaMask!");
+      }
+  }
+
+    loadWeb3();
+    window.web3.eth.getAccounts().then( function (result) {  console.log(result[0]) });
+
+  }, []);
+
   return (
     <Router>
       <div className="App">
