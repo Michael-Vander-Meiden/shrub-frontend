@@ -1,8 +1,6 @@
 import PolicyList from "./components/PolicyList";
 import PolicyDetails from "./components/PolicyDetails";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {getWeb3} from "./utils/getWeb3";
-import {getEthereum} from "./utils/getEthereum";
 import {useEffect} from "react";
 import Web3 from 'web3';
 
