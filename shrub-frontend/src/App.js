@@ -11,23 +11,6 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
 
-  useEffect(() => {
-
-    async function loadWeb3() {
-      if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-          await window.ethereum.enable();
-      } else if (window.web3) {
-          window.web3 = new Web3(window.web3.currentProvider);
-      } else {
-          console.log("Non-Ethereum browser detected. You should consider trying MetaMask!");
-      }
-  }
-
-    loadWeb3();
-    // window.web3.eth.getAccounts().then( function (result) {  console.log(result[0]) });
-
-  }, []);
 
   return (
     <div className="App">

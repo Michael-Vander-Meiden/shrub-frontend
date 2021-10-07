@@ -19,8 +19,9 @@ import { Nav,
 
 const Navbar = () => {
 
+    const [userAddress, setAddress] = useState("");
     useEffect(() => {
-
+        
         async function loadWeb3() {
           if (window.ethereum) {
               window.web3 = new Web3(window.ethereum);
@@ -31,22 +32,19 @@ const Navbar = () => {
               console.log("Non-Ethereum browser detected. You should consider trying MetaMask!");
           }
       }
-    
-        loadWeb3();
-        // window.web3.eth.getAccounts().then( function (result) {  console.log(result[0]) });
-    
-      }, []);
-    
-    //Load User Data to show in Navbar
-    const [userAddress, setAddress] = useState("");
-      
-    async function getWalletAddress(){
-        // await window.web3.eth.getAccounts().then( function (result) {  setAddress(result[0]) });
-        // console.log(userAddress)
-        return userAddress;
-      }
 
-      getWalletAddress();
+        async function loadBlockchainData() {
+            const web3 = window.web3;
+            const acc = await web3.eth.getAccounts();
+            setAddress(acc[0]);
+        }
+
+        loadWeb3()
+        loadBlockchainData()
+
+      }, []);
+
+      
 
 
 
