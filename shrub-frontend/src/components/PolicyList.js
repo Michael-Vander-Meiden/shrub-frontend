@@ -1,36 +1,18 @@
 import useStyles from "./styles";
+import useFetch from "../useFetch";
 import {useState, useEffect} from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import {convertToGMT} from "../convertToGMT";
 
 import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container, TextField} from '@material-ui/core'
 
 const PolicyList = () => {
 
-    const [policies, setPolicies] = useState(null);
     const [SearchTerm, setSearchTerm] = useState('');
     const classes = useStyles();
-
-    // useEffect(() => {
-    //     fetch('http://localhost:3000/policies')
-    //         .then(res => {
-    //             return res.json();
-    //         })
-    //         .then(data => {
-    //             setPolicies(data)
-    //         });
-    // }, []);
-
-    useEffect(() => {
-      fetch('https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789')
-          .then(res => {
-              return res.json();
-          })
-          .then(data => {
-              setPolicies(data)
-          });
-  }, []);
-
+    const {data: policies, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789");
     
+
     return (
         <>
 
@@ -61,6 +43,8 @@ const PolicyList = () => {
           </div>
           <Container className={classes.cardGrid} maxWidth="md">
             <Grid container spacing={4}>
+                {isPending && <div>Loading...</div>}
+                {error && <div> {error} </div>}
                 {policies && policies.filter((val) => {
                     if (SearchTerm == "") {
                       return val
@@ -78,8 +62,8 @@ const PolicyList = () => {
                             </Typography>
                             <Typography>
                             Magnitude: {policy.magnitude} <br />
-                            Policy begins: {policy.start_time} <br />
-                            Policy ends: {policy.end_time} <br />
+                            Policy begins: {convertToGMT(policy.start_time)} <br />
+                            Policy ends: {convertToGMT(policy.end_time)} <br />
                             </Typography>
                         </CardContent>
                         <CardActions style={{justifyContent: 'center'}}>
