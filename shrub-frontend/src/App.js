@@ -1,5 +1,6 @@
 import PolicyList from "./components/PolicyList";
 import PolicyDetails from "./components/PolicyDetails";
+import UserDashboard from "./components/userDashboard";
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {useEffect} from "react";
 import Web3 from 'web3';
@@ -34,6 +35,9 @@ function App() {
             </Route>
             <Route path="/policies/:policy_id">
               <PolicyDetails />
+            </Route>
+            <Route path="/dashboard">
+              <UserDashboard/>
             </Route>
           </Switch>
         </div>
