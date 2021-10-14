@@ -10,8 +10,8 @@ import {Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, C
 const UserDashboard = () => {
     
     const classes = useStyles();
-    const {data: policies, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789");
-    const user_policies = ["0x71C7656EC7ab88b098defB751B7401B5f6d8976F","0x71C7656EC7ab88b098defB751B7401B5f6d8976T"]
+    const {data: policies, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/", 'OVvWk9QTHj6WYVZHQd8Wia49s5kzUa0Y3IkRuUSW');
+    const user_policies = ["0x71C7656EC7ab88b098defB751B7401B5f6d8976F"]
 
     return (
          <>

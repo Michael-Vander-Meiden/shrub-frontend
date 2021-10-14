@@ -12,7 +12,7 @@ const PolicyDetails = () => {
 
     const {policy_id} = useParams();
     //const {data: policy, error, isPending } = useFetch("http://localhost:8000/policies/" + policy_id);
-    const {data: policy, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789&policy_id="+policy_id);
+    const {data: policy, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?policy_id="+policy_id, 'OVvWk9QTHj6WYVZHQd8Wia49s5kzUa0Y3IkRuUSW');
 
     const classes = useStyles();
 

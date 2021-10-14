@@ -10,7 +10,7 @@ const PolicyList = () => {
 
     const [SearchTerm, setSearchTerm] = useState('');
     const classes = useStyles();
-    const {data: policies, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/?password=123456789");
+    const {data: policies, error, isPending } = useFetch("https://r9bii0wu3a.execute-api.us-west-1.amazonaws.com/requestPolicies/policies/", 'OVvWk9QTHj6WYVZHQd8Wia49s5kzUa0Y3IkRuUSW');
     
 
     return (
